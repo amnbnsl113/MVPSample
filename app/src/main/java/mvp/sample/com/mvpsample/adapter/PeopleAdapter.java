@@ -41,7 +41,6 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleView
         if (personDetail != null) {
             holder.name.setText(personDetail.getName());
             holder.description.setText(personDetail.getDetails());
-            holder.image.setImageResource(personDetail.getIcon());
         }
     }
 

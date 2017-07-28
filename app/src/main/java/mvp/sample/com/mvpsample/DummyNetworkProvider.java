@@ -26,8 +26,8 @@ public class DummyNetworkProvider {
 
     private List<PersonDetail> dummyList() {
         List<PersonDetail> personDetails = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            personDetails.add(new PersonDetail("Name" + i, "Details" + i, R.mipmap.ic_launcher));
+        for (int i = 0; i < 40; i++) {
+            personDetails.add(new PersonDetail("Name " + i, "Details " + i, R.mipmap.ic_launcher));
         }
         return personDetails;
     }
