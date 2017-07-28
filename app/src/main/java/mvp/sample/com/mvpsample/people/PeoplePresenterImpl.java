@@ -2,9 +2,8 @@ package mvp.sample.com.mvpsample.people;
 
 import java.util.List;
 
-import mvp.sample.com.mvpsample.DummyNetworkProvider;
-import mvp.sample.com.mvpsample.base.BaseView;
-import mvp.sample.com.mvpsample.listeners.CustomListener;
+import mvp.sample.com.mvpsample.network.DummyNetworkProvider;
+import mvp.sample.com.mvpsample.listeners.OnLoadListener;
 import mvp.sample.com.mvpsample.model.PersonDetail;
 
 /**
@@ -29,7 +28,7 @@ public class PeoplePresenterImpl implements PeoplePresenter {
 
     @Override
     public void fetchPeopleList() {
-        provider.getPeopleList(new CustomListener<List<PersonDetail>>() {
+        provider.getPeopleList(new OnLoadListener<List<PersonDetail>>() {
             @Override
             public void onCallback(List<PersonDetail> personDetails) {
                 if (view != null) {

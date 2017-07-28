@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
 
-import mvp.sample.com.mvpsample.DummyNetworkProvider;
+import mvp.sample.com.mvpsample.network.DummyNetworkProvider;
 import mvp.sample.com.mvpsample.R;
 import mvp.sample.com.mvpsample.adapter.PeopleAdapter;
 import mvp.sample.com.mvpsample.base.BasePresenter;

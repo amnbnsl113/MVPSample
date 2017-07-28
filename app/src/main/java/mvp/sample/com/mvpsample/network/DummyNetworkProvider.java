@@ -1,11 +1,12 @@
-package mvp.sample.com.mvpsample;
+package mvp.sample.com.mvpsample.network;
 
 import android.os.Handler;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import mvp.sample.com.mvpsample.listeners.CustomListener;
+import mvp.sample.com.mvpsample.R;
+import mvp.sample.com.mvpsample.listeners.OnLoadListener;
 import mvp.sample.com.mvpsample.model.PersonDetail;
 
 /**
@@ -13,13 +14,13 @@ import mvp.sample.com.mvpsample.model.PersonDetail;
  * @version 1.0
  * @since 28/7/17
  */
-public class DummyNetworkProvider {
+public class DummyNetworkProvider implements BaseDataProvider {
 
-    public void getPeopleList(final CustomListener<List<PersonDetail>> customListener) {
+    public void getPeopleList(final OnLoadListener<List<PersonDetail>> onLoadListener) {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                customListener.onCallback(dummyList());
+                onLoadListener.onCallback(dummyList());
             }
         }, 2000);
     }

@@ -5,6 +5,6 @@ package mvp.sample.com.mvpsample.listeners;
  * @version 1.0
  * @since 28/7/17
  */
-public interface CustomListener<T> {
+public interface OnLoadListener<T> {
     void onCallback(T t);
 }
