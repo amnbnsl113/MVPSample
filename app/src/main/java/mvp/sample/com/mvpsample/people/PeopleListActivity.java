@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import java.util.List;
 
@@ -17,12 +19,15 @@ public class PeopleListActivity extends AppCompatActivity implements PeopleListV
 
     PeoplePresenterImpl presenter;
     RecyclerView personList;
+    ProgressBar progressBar;
     private PeopleAdapter peopleAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         personList = (RecyclerView) findViewById(R.id.personList);
         personList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -55,5 +60,17 @@ public class PeopleListActivity extends AppCompatActivity implements PeopleListV
         if (peopleAdapter != null) {
             peopleAdapter.setItems(personDetails);
         }
+    }
+
+    @Override
+    public void showLoading() {
+        progressBar.setVisibility(View.VISIBLE);
+        personList.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void hideLoading() {
+        progressBar.setVisibility(View.GONE);
+        personList.setVisibility(View.VISIBLE);
     }
 }

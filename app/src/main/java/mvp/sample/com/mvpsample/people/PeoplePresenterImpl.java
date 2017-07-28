@@ -28,10 +28,12 @@ public class PeoplePresenterImpl implements PeoplePresenter {
 
     @Override
     public void fetchPeopleList() {
+        view.showLoading();
         provider.getPeopleList(new OnLoadListener<List<PersonDetail>>() {
             @Override
             public void onCallback(List<PersonDetail> personDetails) {
                 if (view != null) {
+                    view.hideLoading();
                     view.showPeopleList(personDetails);
                 }
             }

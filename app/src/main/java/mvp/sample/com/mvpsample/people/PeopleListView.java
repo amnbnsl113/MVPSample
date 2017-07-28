@@ -13,4 +13,7 @@ import mvp.sample.com.mvpsample.model.PersonDetail;
 public interface PeopleListView extends BaseView {
     void showPeopleList(List<PersonDetail> personDetails);
 
+    void showLoading();
+
+    void hideLoading();
 }
